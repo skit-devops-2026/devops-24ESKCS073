@@ -34,3 +34,8 @@ make run
 
 `GET /health` returns the running commit SHA. See `Makefile` and the milestone
 sheet for why this is required.
+
+
+## Continuous Integration
+The GitHub Actions CI workflow validates repository hygiene and runs the project's automated build and test checks on pushes to the repository.
+The workflow is defined in `.github/workflows/ci.yml`. Its successful execution helps verify that changes preserve the expected project structure and pass the available automated checks.
