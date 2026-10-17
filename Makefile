@@ -5,6 +5,7 @@ install:
 
 test:
 	@./tests/test_project.sh
+	@./tests/test_assets.sh
 
 build:
 	@echo "BILLBOOK build check passed"
