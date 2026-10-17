@@ -1,0 +1,7 @@
+services:
+  billbook:
+    build: .
+    container_name: billbook
+    ports:
+      - "8081:80"
+    restart: unless-stopped
