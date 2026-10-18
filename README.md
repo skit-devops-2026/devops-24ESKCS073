@@ -1,8 +1,5 @@
 # BILLBOOK
 
-> Replace every angle-bracket placeholder below. The hygiene check in CI will
-> fail until you do.
-
 ## Author
 
 | Roll No. | Name | GitHub username |
@@ -11,31 +8,59 @@
 
 ## About
 
-BILLBOOK is a student-focused expense management web app for tracking expenses, managing budgets, and analyzing spending. It also supports shared expense splitting and balance tracking among users
+BILLBOOK is a student-focused expense management web app for tracking expenses, managing budgets, and analyzing spending. It also supports shared expense splitting and balance tracking among users.
 
-## Tech stack
+## Tech Stack
 
-- Frontend: HTML , CSS , JS
-- Backend: NA
-- Database: NA
+- Frontend: HTML, CSS, JavaScript
+- Web server: Nginx
+- Containerization: Docker and Docker Compose
+- CI: GitHub Actions and Jenkins
 
-## Running locally
+## Running Locally
 
 ```bash
 make install
 make run
 ```
 
+## Docker
+
+The application is available as a public Docker Hub image:
+
+- Image: `atharvasharmaa/billbook:latest`
+- Registry: https://hub.docker.com/r/atharvasharmaa/billbook
+
+Pull the published image:
+
+```bash
+docker pull atharvasharmaa/billbook:latest
+```
+
+Run the container:
+
+```bash
+docker run -d --name billbook -p 8081:80 atharvasharmaa/billbook:latest
+```
+
+Open http://localhost:8081 in your browser.
+
+Alternatively, start the application from the repository using:
+
+```bash
+docker compose up --build -d
+```
+
 ## Live URL
 
-<Add once M5 is done. Until then, leave as is.>
+Deployment URL: Pending deployment in M6.
 
-## Health endpoint
+## Health Endpoint
 
-`GET /health` returns the running commit SHA. See `Makefile` and the milestone
-sheet for why this is required.
-
+The health endpoint requirement will be implemented and verified as part of deployment.
 
 ## Continuous Integration
-The GitHub Actions CI workflow validates repository hygiene and runs the project's automated build and test checks on pushes to the repository.
-The workflow is defined in `.github/workflows/ci.yml`. Its successful execution helps verify that changes preserve the expected project structure and pass the available automated checks.
+
+The GitHub Actions CI workflow validates repository hygiene and runs automated build and test checks. The workflow is defined in `.github/workflows/ci.yml`.
+
+The Jenkins pipeline is defined in `Jenkinsfile` and runs repository hygiene checks, installation, tests, and build checks.
