@@ -1,5 +1,6 @@
 services:
   billbook:
+    image: atharvasharmaa/billbook:latest
     build: .
     container_name: billbook
     ports:
