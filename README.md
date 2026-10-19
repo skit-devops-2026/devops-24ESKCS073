@@ -51,14 +51,15 @@ Alternatively, start the application from the repository using:
 docker compose up --build -d
 ```
 
-## Live URL
+Live URL
 
-Deployment URL: Pending deployment in M6.
+https://billbook-ela8.onrender.com
 
-## Health Endpoint
+Health endpoint
 
-The health endpoint requirement will be implemented and verified as part of deployment.
+GET https://billbook-ela8.onrender.com/health returns HTTP 200 with JSON containing the service status and the running commit SHA.
 
+The endpoint has been verified against the deployed Docker image.
 ## Continuous Integration
 
 The GitHub Actions CI workflow validates repository hygiene and runs automated build and test checks. The workflow is defined in `.github/workflows/ci.yml`.
